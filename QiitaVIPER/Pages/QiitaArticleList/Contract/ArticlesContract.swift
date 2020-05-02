@@ -8,7 +8,7 @@
 import Model
 import UIKit
 
-protocol ArticlesView {
+protocol ArticlesView: class {
     var presenter: ArticlesPresentation! { get set }
 
     func showNoContentScreen()
@@ -16,11 +16,11 @@ protocol ArticlesView {
 }
 
 protocol ArticlesPresentation: class {
-    weak var view: ArticlesView? { get set }
+    var view: ArticlesView? { get set }
     var interactor: ArticlesUseCase! { get set }
     var router: ArticlesWireframe! { get set }
 
-    func viewDidLoad()
+    func viewDidLoad(page: Int, pagePer: Int, limit: Int)
     func didClickSortButton()
     func didSelectArticle(_ article: QiitaArticle)
 }
@@ -36,6 +36,7 @@ protocol ArticlesInteractorOutput: class {
 }
 
 protocol ArticlesWireframe: class {
+    static var appResolver: Resolver { get }
     var viewController: UIViewController? { get set }
     static func assembleModule() -> UIViewController
 }

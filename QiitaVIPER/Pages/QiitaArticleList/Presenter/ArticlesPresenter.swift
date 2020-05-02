@@ -22,14 +22,14 @@ class ArticlesPresenter: ArticlesPresentation {
         }
     }
 
-    func viewDidLoad() {
-        interactor.fetchArticles()
+    func viewDidLoad(page: Int, pagePer: Int, limit: Int) {
+        interactor.fetchArticles(page: page, pagePer: pagePer, limit: limit)
     }
 
     func didClickSortButton() {
         print("sort")
     }
-    
+
     func didSelectArticle(_ article: QiitaArticle) {
         print(articles)
     }
