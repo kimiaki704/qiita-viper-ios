@@ -16,7 +16,7 @@ protocol ArticlesView {
 }
 
 protocol ArticlesPresentation: class {
-    var view: ArticlesView? { get set }
+    weak var view: ArticlesView? { get set }
     var interactor: ArticlesUseCase! { get set }
     var router: ArticlesWireframe! { get set }
 
