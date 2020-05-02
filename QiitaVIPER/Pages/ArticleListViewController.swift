@@ -5,4 +5,7 @@
 //  Created by Suzuki Kimiaki on 2020/05/02.
 //
 
-import Foundation
+import Component
+import UIKit
+
+final class ArticleViewController: UIViewController, Instantiatable {}
