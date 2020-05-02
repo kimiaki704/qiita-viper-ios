@@ -5,13 +5,14 @@
 //  Created by Suzuki Kimiaki on 2020/05/02.
 //
 
-public struct QiitaArticle: Codable {
+public struct QiitaArticle: Codable, Hashable {
     public let id: String
     public let title: String
     public let url: String
     public let userID: String
     public let userName: String
     public let userImgURL: String
+    public let likeCount: Int
     public let createdAt: String
 
     private enum CodingKeys: String, CodingKey {
@@ -19,6 +20,7 @@ public struct QiitaArticle: Codable {
         case user
         case title
         case url
+        case likeCount = "likes_count"
         case createdAt = "created_at"
     }
 
@@ -33,6 +35,7 @@ public struct QiitaArticle: Codable {
         id = try container.decode(String.self, forKey: .id)
         title = try container.decode(String.self, forKey: .title)
         url = try container.decode(String.self, forKey: .url)
+        likeCount = try container.decode(Int.self, forKey: .likeCount)
         createdAt = try container.decode(String.self, forKey: .createdAt)
 
         let user = try container.nestedContainer(keyedBy: NestedKeys.self, forKey: .user)
@@ -46,6 +49,7 @@ public struct QiitaArticle: Codable {
         try container.encode(id, forKey: .id)
         try container.encode(title, forKey: .title)
         try container.encode(url, forKey: .url)
+        try container.encode(likeCount, forKey: .likeCount)
         try container.encode(createdAt, forKey: .createdAt)
 
         var user = container.nestedContainer(keyedBy: NestedKeys.self, forKey: .user)
