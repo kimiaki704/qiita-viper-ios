@@ -20,3 +20,11 @@ targets:
     platform: iOS
     deploymentTarget: "13.0"
     sources: QiitaVIPER
+    dependencies:
+      - target: Model
+  Model:
+    type: framework
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources: Model
+
