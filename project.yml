@@ -20,7 +20,7 @@ targets:
     platform: iOS
     deploymentTarget: "13.0"
     sources: Component  
-  FakeInstagram:
+  QiitaVIPER:
     type: application
     platform: iOS
     deploymentTarget: "13.0"
