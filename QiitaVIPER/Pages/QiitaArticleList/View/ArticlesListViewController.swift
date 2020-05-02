@@ -9,7 +9,7 @@ import Component
 import Model
 import UIKit
 
-final class ArticleListViewController: UIViewController, Instantiatable {
+final class ArticlesListViewController: UIViewController, Instantiatable {
     @IBOutlet weak var collectionVIew: UICollectionView!
 
     var presenter: ArticlesPresentation!
@@ -25,7 +25,7 @@ final class ArticleListViewController: UIViewController, Instantiatable {
     }
 }
 
-extension ArticleListViewController: ArticlesView {
+extension ArticlesListViewController: ArticlesView {
     func showNoContentScreen() {
         print("no content")
     }

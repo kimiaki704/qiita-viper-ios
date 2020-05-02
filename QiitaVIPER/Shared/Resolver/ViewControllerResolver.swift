@@ -9,7 +9,7 @@ import Component
 import UIKit
 
 extension Resolver {
-    func resolveArticleViewController() -> ArticleListViewController {
-        ArticleListViewController.instantiate()
+    func resolveArticlesViewController() -> ArticlesListViewController {
+        ArticlesListViewController.instantiate()
     }
 }

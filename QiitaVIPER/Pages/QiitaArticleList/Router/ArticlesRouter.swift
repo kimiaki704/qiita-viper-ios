@@ -12,7 +12,7 @@ class ArticlesRouter: ArticlesWireframe {
     weak var viewController: UIViewController?
 
     static func assembleModule() -> UIViewController {
-        let view = appResolver.resolveArticleViewController()
+        let view = appResolver.resolveArticlesViewController()
         let presenter = ArticlesPresenter()
         let interactor = ArticlesInteractor()
         let router = ArticlesRouter()
