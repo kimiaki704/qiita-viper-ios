@@ -1,6 +1,6 @@
 //
 //  ArticleListViewController.swift
-//  FakeInstagram
+//  QiitaVIPER
 //
 //  Created by Suzuki Kimiaki on 2020/05/02.
 //
