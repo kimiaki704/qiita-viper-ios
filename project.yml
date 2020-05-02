@@ -38,6 +38,6 @@ targets:
     platform: iOS
     deploymentTarget: "13.0"
     sources: Model
-    dependency:
+    dependencies:
       - carthage: Alamofire
 
