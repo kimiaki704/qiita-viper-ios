@@ -5,14 +5,14 @@
 //  Created by Suzuki Kimiaki on 2020/05/02.
 //
 
-struct QiitaArticle: Codable {
-    let id: Int
-    let title: String
-    let url: String
-    let userID: Int
-    let userName: String
-    let userImgURL: String
-    let createdAt: String
+public struct QiitaArticle: Codable {
+    public let id: Int
+    public let title: String
+    public let url: String
+    public let userID: Int
+    public let userName: String
+    public let userImgURL: String
+    public let createdAt: String
 
     private enum CodingKeys: String, CodingKey {
         case id
@@ -41,7 +41,7 @@ struct QiitaArticle: Codable {
         userImgURL = try user.decode(String.self, forKey: .imgURL)
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(id, forKey: .id)
         try container.encode(title, forKey: .title)
