@@ -24,7 +24,6 @@ public class APIClient {
                     let res = APIResponce(urlReqest: response.request,
                                           headers: response.response,
                                           data: response.data)
-                    print(res)
                     completion(.success(res))
                 case .failure(let error):
                     print(error)

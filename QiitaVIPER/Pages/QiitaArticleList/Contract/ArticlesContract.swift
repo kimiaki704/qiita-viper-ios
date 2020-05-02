@@ -21,7 +21,6 @@ protocol ArticlesPresentation: class {
     var router: ArticlesWireframe! { get set }
 
     func viewDidLoad()
-    func didClickSortButton()
     func didSelectArticle(_ article: QiitaArticle)
 }
 

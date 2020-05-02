@@ -15,6 +15,7 @@ public class QiitaArticlesCollectionViewCell: UICollectionViewCell, NibLoadableV
     @IBOutlet private var lgtmCountLabel: UILabel!
 
     public func setup(_ article: QiitaArticle) {
+        contentView.isUserInteractionEnabled = false
 //        userImageView.image = article.userImgURL
         articleTitleLabel.text = article.title
         userNameLabel.text = "by \(article.userName)"

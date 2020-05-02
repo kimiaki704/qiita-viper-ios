@@ -32,10 +32,6 @@ class ArticlesPresenter: ArticlesPresentation {
         interactor.fetchArticles(page: state.page, pagePer: state.pagePer)
     }
 
-    func didClickSortButton() {
-        print("sort")
-    }
-
     func didSelectArticle(_ article: QiitaArticle) {
         print(articles)
     }
@@ -44,7 +40,6 @@ class ArticlesPresenter: ArticlesPresentation {
 extension ArticlesPresenter: ArticlesInteractorOutput {
     func articlesFetched(_ articles: [QiitaArticle]) {
         self.articles = articles
-        print(articles)
     }
 
     func articlesFetchFailed(_ error: Error) {
