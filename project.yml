@@ -1,0 +1,22 @@
+name: QiitaVIPER
+options:
+  bundleIdPrefix: kimiaki.QiitaVIPER
+  deploymentTarget: "13.0"
+  groupSortPosition: top
+  minimumXcodeGenVersion: 2.15.0
+  carthageExecutablePath: mint run Carthage/Carthage carthage
+configs:
+  DebugDevelopment: debug
+  DebugProduction: debug
+  ReleaseDevelopment: release
+  ReleaseProduction: release
+settings:
+  base:
+    MARKETING_VERSION: 1.0.0
+    BUILD_VERSION: 1
+targets:
+  FakeInstagram:
+    type: application
+    platform: iOS
+    deploymentTarget: "13.0"
+    sources: QiitaVIPER
