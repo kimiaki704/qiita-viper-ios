@@ -8,7 +8,7 @@
 import Alamofire
 
 public class APIClient {
-    func request(endpoint: Endpoint,
+    func request(endpoint: Endpoints,
                  parameters: [String: Any]?,
                  headers: HTTPHeaders?,
                  completion: @escaping (Result<APIResponce, Error>) -> Void) {
@@ -24,8 +24,10 @@ public class APIClient {
                     let res = APIResponce(urlReqest: response.request,
                                           headers: response.response,
                                           data: response.data)
+                    print(res)
                     completion(.success(res))
-                case .failure:
+                case .failure(let error):
+                    print(error)
                     #warning("TODO: Error処理")
                 }
             }

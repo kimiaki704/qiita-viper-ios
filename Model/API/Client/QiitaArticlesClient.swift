@@ -16,8 +16,7 @@ public class QiitaArticlesClient: APIClient, QiitaArticlesClientType {
 
     public func fetch(page: Int, pagePer: Int, limit: Int, headers: HTTPHeaders?, completion: @escaping (Result<APIResponce, Error>) -> Void) {
         let params = QiitaArticlesParams.fetch(page: page, pagePer: pagePer, limit: limit)
-        // swiftlint:disable:next force_cast
-        request(endpoint: Endpoints.QiitaArticles.self as! Endpoint,
+        request(endpoint: .qiitaArticlesFetch,
                 parameters: params.to,
                 headers: headers) { result in
             switch result {

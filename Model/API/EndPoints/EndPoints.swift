@@ -18,26 +18,24 @@ protocol Endpoint {
 }
 
 enum Endpoints {
-    enum QiitaArticles: Endpoint {
-        case fetch
-        
-        var path: String {
-            switch self {
-            case .fetch: return "/item"
-            }
+    case qiitaArticlesFetch
+
+    var path: String {
+        switch self {
+        case .qiitaArticlesFetch: return "/items"
         }
-        
-        var url: String {
-            switch self {
-            case .fetch: return API.qiitaURL + path
-            }
+    }
+
+    var url: String {
+        switch self {
+        case .qiitaArticlesFetch: return API.qiitaURL + path
         }
-        
-        var method: HTTPMethod {
-            switch self {
-            case .fetch:
-                return .get
-            }
+    }
+
+    var method: HTTPMethod {
+        switch self {
+        case .qiitaArticlesFetch:
+            return .get
         }
     }
 }

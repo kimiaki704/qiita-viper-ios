@@ -10,12 +10,12 @@ import Model
 import UIKit
 
 final class ArticlesListViewController: UIViewController, Instantiatable {
-    @IBOutlet weak var collectionVIew: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
 
     var presenter: ArticlesPresentation!
     var articles: [QiitaArticle] = [] {
         didSet {
-            collectionVIew.reloadData()
+            print(articles)
         }
     }
 
