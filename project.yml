@@ -26,7 +26,13 @@ targets:
     deploymentTarget: "13.0"
     sources: QiitaVIPER
     dependencies:
+      - target: Component
       - target: Model
+    preBuildScripts:
+      - name: "[SwiftLint] Run Script"
+        script: "make swiftlint"
+      - name: "[SwiftFormat] Run Script"
+        script: "make swiftformat-diff"
   Model:
     type: framework
     platform: iOS
