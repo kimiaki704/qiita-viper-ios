@@ -21,7 +21,7 @@ final class ArticlesListViewController: UIViewController, Instantiatable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad(page: 1, pagePer: 1, limit: 50)
+        presenter.viewDidLoad()
     }
 }
 

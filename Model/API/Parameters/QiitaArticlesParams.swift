@@ -6,15 +6,14 @@
 //
 
 public enum QiitaArticlesParams {
-    case fetch(page: Int, pagePer: Int, limit: Int)
+    case fetch(page: Int, pagePer: Int)
 
     var to: [String: Any] {
         switch self {
-        case .fetch(let page, let pagePer, let limit):
+        case .fetch(let page, let pagePer):
             var params: [String: Any] = [:]
             params["page"] = page
             params["page_per"] = pagePer
-            params["limit"] = limit
             return params
         }
     }

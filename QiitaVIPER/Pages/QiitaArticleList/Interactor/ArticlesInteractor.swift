@@ -11,10 +11,9 @@ class ArticlesInteractor: ArticlesUseCase {
     private let repository = QiitaArticleRepository()
     weak var output: ArticlesInteractorOutput!
 
-    func fetchArticles(page: Int, pagePer: Int, limit: Int) {
+    func fetchArticles(page: Int, pagePer: Int) {
         repository.fetch(page: page,
-                         pagePer: pagePer,
-                         limit: limit) { result in
+                         pagePer: pagePer) { result in
             switch result {
             case .success(let articles):
                 self.output.articlesFetched(articles)

@@ -8,6 +8,12 @@
 import Model
 
 class ArticlesPresenter: ArticlesPresentation {
+    struct ArticlesState {
+        var page = 1
+        let pagePer = 50
+    }
+
+    private var state: ArticlesState = ArticlesState()
     weak var view: ArticlesView?
     var interactor: ArticlesUseCase!
     var router: ArticlesWireframe!
@@ -22,8 +28,8 @@ class ArticlesPresenter: ArticlesPresentation {
         }
     }
 
-    func viewDidLoad(page: Int, pagePer: Int, limit: Int) {
-        interactor.fetchArticles(page: page, pagePer: pagePer, limit: limit)
+    func viewDidLoad() {
+        interactor.fetchArticles(page: state.page, pagePer: state.pagePer)
     }
 
     func didClickSortButton() {

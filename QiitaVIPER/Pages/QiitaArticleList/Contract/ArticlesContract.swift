@@ -20,14 +20,14 @@ protocol ArticlesPresentation: class {
     var interactor: ArticlesUseCase! { get set }
     var router: ArticlesWireframe! { get set }
 
-    func viewDidLoad(page: Int, pagePer: Int, limit: Int)
+    func viewDidLoad()
     func didClickSortButton()
     func didSelectArticle(_ article: QiitaArticle)
 }
 
 protocol ArticlesUseCase: class {
     var output: ArticlesInteractorOutput! { get set }
-    func fetchArticles(page: Int, pagePer: Int, limit: Int)
+    func fetchArticles(page: Int, pagePer: Int)
 }
 
 protocol ArticlesInteractorOutput: class {

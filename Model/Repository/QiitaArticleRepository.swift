@@ -6,17 +6,16 @@
 //
 
 public protocol QiitaArticleRepositoryType {
-    func fetch(page: Int, pagePer: Int, limit: Int, completion: @escaping (Result<[QiitaArticle], Error>) -> Void)
+    func fetch(page: Int, pagePer: Int, completion: @escaping (Result<[QiitaArticle], Error>) -> Void)
 }
 
 public class QiitaArticleRepository: QiitaArticleRepositoryType {
     public init() {}
 
-    public func fetch(page: Int, pagePer: Int, limit: Int, completion: @escaping (Result<[QiitaArticle], Error>) -> Void) {
+    public func fetch(page: Int, pagePer: Int, completion: @escaping (Result<[QiitaArticle], Error>) -> Void) {
         let client = QiitaArticlesClient()
         client.fetch(page: page,
                      pagePer: pagePer,
-                     limit: limit,
                      headers: []) { result in
             switch result {
             case .success(let res):

@@ -8,14 +8,14 @@
 import Alamofire
 
 public protocol QiitaArticlesClientType {
-    func fetch(page: Int, pagePer: Int, limit: Int, headers: HTTPHeaders?, completion: @escaping (Result<APIResponce, Error>) -> Void)
+    func fetch(page: Int, pagePer: Int, headers: HTTPHeaders?, completion: @escaping (Result<APIResponce, Error>) -> Void)
 }
 
 public class QiitaArticlesClient: APIClient, QiitaArticlesClientType {
     public override init() { super.init() }
 
-    public func fetch(page: Int, pagePer: Int, limit: Int, headers: HTTPHeaders?, completion: @escaping (Result<APIResponce, Error>) -> Void) {
-        let params = QiitaArticlesParams.fetch(page: page, pagePer: pagePer, limit: limit)
+    public func fetch(page: Int, pagePer: Int, headers: HTTPHeaders?, completion: @escaping (Result<APIResponce, Error>) -> Void) {
+        let params = QiitaArticlesParams.fetch(page: page, pagePer: pagePer)
         request(endpoint: .qiitaArticlesFetch,
                 parameters: params.to,
                 headers: headers) { result in
