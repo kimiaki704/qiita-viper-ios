@@ -14,3 +14,7 @@ public protocol NibLoadableView: class {
     static var nibName: String { get }
     static var nibBundle: Bundle? { get }
 }
+
+public protocol ReusableView: class {
+    static var reuseIdentifier: String { get }
+}
