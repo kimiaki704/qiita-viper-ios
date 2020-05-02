@@ -1,0 +1,30 @@
+excluded:
+  - Carthage
+  - vender
+
+included:
+  - QiitaVIPER
+
+disabled_rules:
+  - line_length
+  - trailing_whitespace
+  - vertical_whitespace
+  - trailing_comma
+
+identifier_name:
+  excluded:
+    - id
+    - i
+    - x
+    - y
+    - vc
+    - as
+    - to
+    - in
+    - nc
+
+type_name:
+  excluded:
+    - T
+    - ID
+  max_length: 50
