@@ -3,6 +3,8 @@ excluded:
   - vender
 
 included:
+  - Component
+  - Model
   - QiitaVIPER
 
 disabled_rules:
