@@ -19,7 +19,9 @@ targets:
     type: framework
     platform: iOS
     deploymentTarget: "13.0"
-    sources: Component  
+    sources: Component
+    dependencies:
+      - carthage: Nuke
   QiitaVIPER:
     type: application
     platform: iOS
