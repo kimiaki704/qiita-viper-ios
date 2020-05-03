@@ -38,4 +38,5 @@ protocol ArticlesWireframe: class {
     static var appResolver: Resolver { get }
     var viewController: UIViewController? { get set }
     static func assembleModule() -> UIViewController
+    func presentDetailViewController(_ article: QiitaArticle)
 }

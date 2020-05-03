@@ -5,6 +5,7 @@
 //  Created by Suzuki Kimiaki on 2020/05/02.
 //
 
+import Model
 import UIKit
 
 class ArticlesRouter: ArticlesWireframe {
@@ -30,5 +31,10 @@ class ArticlesRouter: ArticlesWireframe {
         router.viewController = view
 
         return navigation
+    }
+
+    func presentDetailViewController(_ article: QiitaArticle) {
+        let vc = DetailRouter.assembleModule(article)
+        viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -5,10 +5,14 @@
 //  Created by 鈴木 公章 on 2020/05/03.
 //
 
+import Model
+
 class DetailPresenter: DetailPresentation {
     var view: DetailView?
 
+    var article: QiitaArticle!
+
     func viewDidLoad() {
-        print(view)
+        view?.showDetail(article)
     }
 }

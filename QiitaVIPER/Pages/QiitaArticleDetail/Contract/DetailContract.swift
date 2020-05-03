@@ -11,7 +11,7 @@ import UIKit
 protocol DetailView: class {
     var presenter: DetailPresentation! { get set }
 
-    func showDetailData(_ article: QiitaArticle)
+    func showDetail(_ article: QiitaArticle)
 }
 
 protocol DetailPresentation: class {
@@ -22,5 +22,5 @@ protocol DetailPresentation: class {
 
 protocol DetailWireframe: class {
     static var appResolver: Resolver { get }
-    static func assembleModule() -> UIViewController
+    static func assembleModule(_ article: QiitaArticle) -> UIViewController
 }

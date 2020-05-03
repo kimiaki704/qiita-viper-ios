@@ -34,6 +34,7 @@ final class ArticlesListViewController: UIViewController, Instantiatable {
 
 extension ArticlesListViewController {
     private func setupCollectionView() {
+        collectionView.delegate = self
         collectionView.compositionalLayout(itemWidthDimension: .fractionalWidth(1.0),
                                            itemHeightDimension: .estimated(111))
         collectionView.register(QiitaArticlesCollectionViewCell.self)
@@ -62,5 +63,12 @@ extension ArticlesListViewController: ArticlesView {
 
     func showArticlesData(_ articles: [QiitaArticle]) {
         self.articles = articles
+    }
+}
+
+extension ArticlesListViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        presenter.didSelectArticle(articles[indexPath.row])
     }
 }

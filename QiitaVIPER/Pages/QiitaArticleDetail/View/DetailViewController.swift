@@ -26,7 +26,7 @@ final class DetailViewController: UIViewController, Instantiatable {
 }
 
 extension DetailViewController: DetailView {
-    func showDetailData(_ article: QiitaArticle) {
+    func showDetail(_ article: QiitaArticle) {
         let url = URL(string: article.url)!
         let request = URLRequest(url: url)
         webView.load(request)

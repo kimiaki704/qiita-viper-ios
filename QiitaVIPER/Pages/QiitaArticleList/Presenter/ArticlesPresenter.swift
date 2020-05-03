@@ -33,7 +33,7 @@ class ArticlesPresenter: ArticlesPresentation {
     }
 
     func didSelectArticle(_ article: QiitaArticle) {
-        print(articles)
+        router.presentDetailViewController(article)
     }
 }
 

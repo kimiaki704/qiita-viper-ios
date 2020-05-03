@@ -30,6 +30,7 @@ targets:
     dependencies:
       - target: Component
       - target: Model
+      - sdk: Webkit.framework
     preBuildScripts:
       - name: "[SwiftLint] Run Script"
         script: "make swiftlint"

@@ -12,4 +12,8 @@ extension Resolver {
     func resolveArticlesViewController() -> ArticlesListViewController {
         ArticlesListViewController.instantiate()
     }
+
+    func resolveDetailViewController() -> DetailViewController {
+        DetailViewController.instantiate()
+    }
 }
