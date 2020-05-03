@@ -21,9 +21,14 @@ final class ArticlesListViewController: UIViewController, Instantiatable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         setupCollectionView()
         configureDataSource()
         presenter.viewDidLoad()
+    }
+
+    private func setupUI() {
+        title = "Articles"
     }
 }
 

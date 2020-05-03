@@ -16,9 +16,10 @@ public class QiitaArticlesCollectionViewCell: UICollectionViewCell, NibLoadableV
 
     public func setup(_ article: QiitaArticle) {
         contentView.isUserInteractionEnabled = false
-//        userImageView.image = article.userImgURL
+        userImageView.loadImage(article.userImgURL, processors: [.circle])
         articleTitleLabel.text = article.title
-        userNameLabel.text = "by \(article.userName)"
         lgtmCountLabel.text = "LGTM \(article.likeCount)"
+        userNameLabel.text = "by \(article.userName)"
+        if article.userName == "" { userNameLabel.isHidden = true }
     }
 }
