@@ -29,22 +29,9 @@ final class ArticlesListViewController: UIViewController, Instantiatable {
 
 extension ArticlesListViewController {
     private func setupCollectionView() {
-        collectionView.collectionViewLayout = createLayout()
+        collectionView.compositionalLayout(itemWidthDimension: .fractionalWidth(1.0),
+                                           itemHeightDimension: .estimated(111))
         collectionView.register(QiitaArticlesCollectionViewCell.self)
-    }
-
-    #warning("TODO: こいつ分離できそう")
-    private func createLayout() -> UICollectionViewLayout {
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .estimated(111))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .estimated(111))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
-                                                       subitems: [item])
-        let section = NSCollectionLayoutSection(group: group)
-        let layout = UICollectionViewCompositionalLayout(section: section)
-        return layout
     }
 
     func performSnapshot() {
