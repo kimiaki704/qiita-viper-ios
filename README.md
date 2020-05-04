@@ -1,6 +1,6 @@
 # qiita-viper-ios
 
-[Xcode](https://img.shields.io/badge/Xcode-11.4+-aqua.svg?logo=xcode)
+![Xcode](https://img.shields.io/badge/Xcode-11.4+-aqua.svg?logo=xcode)
 ![iOS](https://img.shields.io/badge/iOS-13.0+-springgreen.svg?logo=apple)
 ![Swift](https://img.shields.io/badge/Swift-5.2-tomato.svg?logo=swift)
 
