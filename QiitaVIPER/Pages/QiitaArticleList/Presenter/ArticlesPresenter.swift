@@ -40,11 +40,20 @@ class ArticlesPresenter: ArticlesPresentation {
         state.page = 1
         interactor.fetchArticles(page: state.page, pagePer: state.pagePer)
     }
+
+    func loadMoreCollectionView() {
+        state.page += 1
+        interactor.loadMoreArticles(page: state.page, pagePer: state.pagePer)
+    }
 }
 
 extension ArticlesPresenter: ArticlesInteractorOutput {
     func articlesFetched(_ articles: [QiitaArticle]) {
         self.articles = articles
+    }
+
+    func loadMoreArticles(_ articles: [QiitaArticle]) {
+        self.articles += articles
     }
 
     func articlesFetchFailed(_ error: Error) {

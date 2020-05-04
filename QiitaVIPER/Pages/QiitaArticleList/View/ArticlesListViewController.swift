@@ -79,4 +79,9 @@ extension ArticlesListViewController: UICollectionViewDelegate {
         collectionView.deselectItem(at: indexPath, animated: false)
         presenter.didSelectArticle(articles[indexPath.row])
     }
+
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let isLastCell = (articles.count - 3 == indexPath.row)
+        if isLastCell { presenter.loadMoreCollectionView() }
+    }
 }
