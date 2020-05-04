@@ -15,13 +15,11 @@ class DetailRouter: DetailWireframe {
     static func assembleModule(_ article: QiitaArticle) -> UIViewController {
         let view = appResolver.resolveDetailViewController()
         let presenter = appResolver.resolveDetailPresenter()
-        let router = DetailRouter()
+        let router = appResolver.resolveDetailRouter()
 
         view.presenter = presenter
-
         presenter.view = view
         presenter.article = article
-
         router.viewController = view
 
         return view

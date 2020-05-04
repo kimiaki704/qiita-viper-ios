@@ -16,18 +16,14 @@ class ArticlesRouter: ArticlesWireframe {
         let view = appResolver.resolveArticlesViewController()
         let presenter = appResolver.resolveArticlesPresenter()
         let interactor = appResolver.resolveArticlesInteractor()
-        let router = ArticlesRouter()
-
+        let router = appResolver.resolveArticlesRouter()
         let navigation = UINavigationController(rootViewController: view)
 
         view.presenter = presenter
-
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
-
         interactor.output = presenter
-
         router.viewController = view
 
         return navigation
