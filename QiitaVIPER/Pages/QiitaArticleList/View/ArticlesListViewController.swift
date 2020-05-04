@@ -11,6 +11,7 @@ import UIKit
 
 final class ArticlesListViewController: UIViewController, Instantiatable {
     @IBOutlet weak var collectionView: UICollectionView!
+    private let refreshControl = UIRefreshControl()
     private var dataSource: UICollectionViewDiffableDataSource<ArticlesCollectionViewSection, QiitaArticle>!
     var presenter: ArticlesPresentation!
     var articles: [QiitaArticle] = [] {
@@ -38,6 +39,13 @@ extension ArticlesListViewController {
         collectionView.compositionalLayout(itemWidthDimension: .fractionalWidth(1.0),
                                            itemHeightDimension: .estimated(111))
         collectionView.register(QiitaArticlesCollectionViewCell.self)
+        collectionView.refreshControl = refreshControl
+        refreshControl.addTarget(self, action: #selector(collectionViewRefresh), for: .valueChanged)
+    }
+
+    @objc private func collectionViewRefresh() {
+        presenter.refreshCollectionView()
+        refreshControl.endRefreshing()
     }
 
     func performSnapshot() {

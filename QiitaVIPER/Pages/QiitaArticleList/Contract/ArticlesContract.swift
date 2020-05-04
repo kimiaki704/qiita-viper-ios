@@ -22,6 +22,7 @@ protocol ArticlesPresentation: class {
 
     func viewDidLoad()
     func didSelectArticle(_ article: QiitaArticle)
+    func refreshCollectionView()
 }
 
 protocol ArticlesUseCase: class {

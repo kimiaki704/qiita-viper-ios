@@ -10,7 +10,7 @@ import Model
 class ArticlesPresenter: ArticlesPresentation {
     struct ArticlesState {
         var page = 1
-        let pagePer = 50
+        let pagePer = 20
     }
 
     private var state: ArticlesState = ArticlesState()
@@ -34,6 +34,11 @@ class ArticlesPresenter: ArticlesPresentation {
 
     func didSelectArticle(_ article: QiitaArticle) {
         router.presentDetailViewController(article)
+    }
+
+    func refreshCollectionView() {
+        state.page = 1
+        interactor.fetchArticles(page: state.page, pagePer: state.pagePer)
     }
 }
 
