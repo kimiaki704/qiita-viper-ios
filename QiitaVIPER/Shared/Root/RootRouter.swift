@@ -8,8 +8,6 @@
 import UIKit
 
 class RootRouter: RootWireframe {
-    static var appResolver: Resolver { Resolver.shared }
-
     func presentArticleListViewController(in window: UIWindow) {
         window.makeKeyAndVisible()
         window.rootViewController = ArticlesRouter.assembleModule()
