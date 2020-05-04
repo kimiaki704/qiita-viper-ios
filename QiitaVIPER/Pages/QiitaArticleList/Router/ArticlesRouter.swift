@@ -14,8 +14,8 @@ class ArticlesRouter: ArticlesWireframe {
 
     static func assembleModule() -> UIViewController {
         let view = appResolver.resolveArticlesViewController()
-        let presenter = ArticlesPresenter()
-        let interactor = ArticlesInteractor()
+        let presenter = appResolver.resolveArticlesPresenter()
+        let interactor = appResolver.resolveArticlesInteractor()
         let router = ArticlesRouter()
 
         let navigation = UINavigationController(rootViewController: view)
